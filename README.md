@@ -6,7 +6,7 @@ Primero se debe crear el archivo `.env` con la variable `BOT_TOKEN` correspondie
 
 ### Ejemplo `.env`
   
-```js
+```
 BOT_TOKEN=token
 ```
 
