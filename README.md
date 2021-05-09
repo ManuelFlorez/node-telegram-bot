@@ -4,7 +4,7 @@
 
 Primero se debe crear el archivo `.env` con la variable `BOT_TOKEN` correspondiente al Token de acceso al bot que queremos construir.
 
-### Ejemplo `.env`
+### Ejemplo archivo `.env`
   
 ```
 BOT_TOKEN=token
