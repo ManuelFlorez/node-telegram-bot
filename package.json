@@ -16,5 +16,8 @@
   "bugs": {
     "url": "https://github.com/ManuelFlorez/node-telegram-bot/issues"
   },
-  "homepage": "https://github.com/ManuelFlorez/node-telegram-bot#readme"
+  "homepage": "https://github.com/ManuelFlorez/node-telegram-bot#readme",
+  "dependencies": {
+    "telegraf": "^4.3.0"
+  }
 }
