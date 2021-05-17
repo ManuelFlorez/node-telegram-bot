@@ -14,13 +14,15 @@ bot.start( start );
 
 bot.help( help );
 
+bot.command('test', (ctx) => ctx.reply('Soy un test'))
+
 bot.hears('admin', infoManuel)
 
 bot.hears('1dolar', dolar1)
 
 bot.hears('date', (ctx) => ctx.reply(new Date().toLocaleString()))
 
-
+//'text'
 bot.on('sticker', (ctx) => ctx.reply('👍'))
 bot.hears('hi', (ctx) => ctx.reply('Hey there'))
 bot.launch()
