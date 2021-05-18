@@ -1,0 +1,21 @@
+{
+  "message": {
+    "message_id": 352,
+    "from": {
+      "id": 1213354586,
+      "is_bot": false,
+      "first_name": "Manuel",
+      "last_name": "Florez",
+      "language_code": "es"
+    },
+    "chat": {
+      "id": 1213354586,
+      "first_name": "Manuel",
+      "last_name": "Florez",
+      "type": "private"
+    },
+    "date": 1621277464,
+    "text": "/start",
+    "entities": [ { "offset": 0, "length": 6, "type": "bot_command" } ]
+  }
+}

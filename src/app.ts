@@ -3,8 +3,10 @@ import { CommonController } from './controller/CommonController'
 import { StudentController } from './controller/StudentController'
 import { Telegraf } from 'telegraf'
 import dotenv from 'dotenv'
+import { connect } from './persistence/database'
 
 dotenv.config()
+connect()
 
 const bot:Telegraf = new Telegraf(process.env.BOT_TOKEN)
 
