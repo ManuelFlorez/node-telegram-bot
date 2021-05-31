@@ -25,8 +25,8 @@ export class CommonController {
   async start(ctx: Context) {
     let update: any = ctx.update
     const { message } = update
-    const usuario = await this.findUsuario(message.from.id)
-    const obj = (usuario === null) ? await this.addRegister(message) : await this.noRegister(usuario)
+    const user = await this.findUsuario(message.from.id)
+    const obj = (user === null) ? await this.addRegister(message) : await this.noRegister(user)
     ctx.reply(obj.resp)
   }
 
