@@ -10,9 +10,9 @@ connect()
 
 const bot:Telegraf = new Telegraf(process.env.BOT_TOKEN)
 
-new CommonController(bot)
-new AdminController(bot)
-new StudentController(bot)
+const commonController = new CommonController(bot)
+const adminController = new AdminController(bot)
+const studentController = new StudentController(bot)
 
 console.log('bot inicializado');
 
