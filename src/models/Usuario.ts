@@ -5,7 +5,7 @@ const UsuarioSchema = new Schema({
     type: String,
     require: true
   },
-  documetnt: {
+  document: {
     type: String,
     require: false
   },
