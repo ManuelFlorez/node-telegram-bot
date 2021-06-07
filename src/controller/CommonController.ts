@@ -1,6 +1,5 @@
-import { Telegraf, Context } from "telegraf"
-
-import { registrarUsuarioService } from "../services/commonServices/RegistrarUsuarioService"
+import { Telegraf, Context } from 'telegraf'
+import { registrarUsuarioService } from '../services/commonServices/RegistrarUsuarioService'
 
 export class CommonController {
 
