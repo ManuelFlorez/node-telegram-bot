@@ -3,6 +3,8 @@ import { actualizarClaveService } from '../services/commonServices/ActualizarCla
 import { actualizarCodeService } from '../services/commonServices/ActualizarCodeService'
 import { actualizarDocumentoService } from '../services/commonServices/ActualizarDocumentoService'
 import { conectarService } from '../services/commonServices/ConectarService'
+import { notasService } from '../services/commonServices/NotasService'
+import { notificacionService } from '../services/commonServices/NotificacionService'
 import { registrarUsuarioService } from '../services/commonServices/RegistrarUsuarioService'
 import { Command } from './Command'
 
@@ -18,6 +20,8 @@ export class CommonController {
     this.commands.push({ name: 'codigo', text: 'Actualice el codigo' })
     this.commands.push({ name: 'clave', text: 'Actualice la clave' })
     this.commands.push({ name: 'conectar', text: 'Conectar con Divisist2.0' })
+    this.commands.push({ name: 'notas', text: 'Visualizar las notas del semestre actual' })
+    this.commands.push({ name: 'notificacion', text: 'Activar notificaciones ' })
     this.commands.push({ name: 'help', text: 'Mostrar las opciones del asistente' })
     this.init();
   }
@@ -33,15 +37,13 @@ export class CommonController {
     this.bot.command('codigo', this.addCode)
     this.bot.command('clave', this.addClave)
     this.bot.command('conectar', this.conectar )
-  }
-
-  test(ctx: Context) {
-    ctx.reply('Soy un test en TypeScript')
+    this.bot.command('notas', this.notas )
+    this.bot.command('notificacion', this.notificacion )
   }
 
   addDocument(ctx: Context) {
     let update: any = ctx.update
-      const { message } = update
+    const { message } = update
     actualizarDocumentoService(message, (data: string) => ctx.reply(data))
   }
 
@@ -61,6 +63,18 @@ export class CommonController {
     let update: any = ctx.update
     const { message } = update
     conectarService(message, (data: string) => ctx.reply(data))
+  }
+
+  notas(ctx: Context) {
+    let update: any = ctx.update
+    const { message } = update
+    notasService(message, (data: string) => ctx.reply(data))
+  }
+
+  notificacion(ctx: Context) {
+    let update: any = ctx.update
+    const { message } = update
+    notificacionService(message, (data: string) => ctx.reply(data))
   }
 
   help(ctx: Context) {
