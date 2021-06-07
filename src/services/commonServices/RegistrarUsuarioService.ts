@@ -1,9 +1,10 @@
-import Usuario from "../../models/Usuario";
-import { Message } from "./Message";
+import Usuario from '../../models/Usuario';
+import { Message } from './Message';
+import { logger } from '../../util/logger'
 
 const logError = (err: any) => console.log('err', err)
-const logRegisterSuccess = (doc: any) => console.log('registrar exitoso', doc)
-const logRegisterFaile = (doc: any) => console.log('Ya hay un registro!', doc)
+const logRegisterSuccess = (doc: any) => logger.info('registrar exitoso', doc)
+const logRegisterFaile = (doc: any) => logger.info('Ya hay un registro!', doc)
 
 const tengoRegistro = (message: Message): string => {
   logRegisterFaile(message)
@@ -17,7 +18,7 @@ const registrar = (message: Message, calback: Function) => {
     calback('Se registro exitosamente')
   },
     (reason) => {
-      console.log('reason: esto no devio pasar', reason)
+      logger.warn('reason: esto no devio pasar', reason)
       calback('reason: esto no devio pasar')
     }
   )

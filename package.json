@@ -4,7 +4,7 @@
   "description": "",
   "main": "build/app.js",
   "scripts": {
-    "start": "tsc && node build/src/app.js",
+    "start": "tsc && node build/app.js",
     "test": "jest --coverage",
     "sonar": "node sonar-scanner.js"
   },
