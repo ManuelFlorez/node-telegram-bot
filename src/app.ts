@@ -4,6 +4,7 @@ import { StudentController } from './controller/StudentController'
 import { Telegraf } from 'telegraf'
 import dotenv from 'dotenv'
 import { connect } from './persistence/database'
+import { logger } from './util/logger'
 
 dotenv.config()
 connect()
@@ -14,7 +15,7 @@ const commonController = new CommonController(bot)
 const adminController = new AdminController(bot)
 const studentController = new StudentController(bot)
 
-console.log('bot inicializado');
+logger.info('bot inicializado');
 
 bot.launch()
 
